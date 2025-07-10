@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS uas_cloud;
+
+USE uas_cloud;
+
+CREATE TABLE IF NOT EXISTS mahasiswa (
+  nim VARCHAR(20) PRIMARY KEY,
+  nama VARCHAR(50),
+  email VARCHAR(50)
+);

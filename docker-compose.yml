@@ -1,0 +1,20 @@
+services:
+  app:
+    build: ./app
+    ports:
+      - "8080:80"
+    depends_on:
+      - akbardb
+
+  akbardb:
+    image: mysql:5.7
+    container_name: akbarmysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: akbarpass
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./db/2212501122.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  db_data:
