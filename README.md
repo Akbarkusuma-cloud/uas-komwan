@@ -1,28 +1,29 @@
+# 📘 Proyek UAS Cloud Computing - Aplikasi Data Mahasiswa
 
-Proyek ini merupakan tugas UAS Mata Kuliah Cloud Computing dengan implementasi **Docker Compose**, **PHP Native**, dan **MySQL**. Aplikasi sederhana ini digunakan untuk melakukan **input data mahasiswa** (NIM, Nama, Email) dan menampilkannya dalam tabel. Desain tampilan menggunakan **Bootstrap 5** dan sudah responsif di mobile dan desktop.
-
----
-
-## 🔧 Teknologi yang Digunakan
-
-- **PHP 8.1 (Apache)**
-- **MySQL 5.7**
-- **Docker & Docker Compose**
-- **Bootstrap 5 (CDN)**
+Proyek ini merupakan tugas UAS Mata Kuliah **Komputasi Awan (Cloud Computing)** yang dikembangkan oleh **Akbar Kusuma (2212501122)**. Aplikasi ini dibangun menggunakan **PHP Native**, **MySQL**, dan dijalankan secara containerized menggunakan **Docker Compose**. Fungsinya sederhana: melakukan input data mahasiswa dan menampilkannya dalam tabel. Tampilan dibuat responsif menggunakan **Bootstrap 5**.
 
 ---
 
-## 📂 Struktur Folder
+## 🛠 Teknologi yang Digunakan
+
+- PHP 8.1 (Apache)
+- MySQL 5.7
+- Docker & Docker Compose
+- Bootstrap 5 (CDN)
+
+---
+
+## 📁 Struktur Folder
 
 ```
-joki-uas-ubl/
+uas-cloud-2212501122/
 │
 ├── app/
-│   ├── index.php           # Halaman utama form + data
-│   ├── dbconn.php          # Koneksi database
+│   ├── index.php           # Halaman input dan tampilan data mahasiswa
+│   ├── dbconn.php          # File koneksi ke database
 │
 ├── db/
-│   └── 00000073909.sql     # File SQL untuk membuat database + tabel mahasiswa
+│   └── 00000073909.sql     # SQL schema database & tabel mahasiswa
 │
 ├── docker-compose.yml      # Konfigurasi Docker Compose
 ├── Dockerfile              # Dockerfile untuk PHP Apache
@@ -30,19 +31,18 @@ joki-uas-ubl/
 
 ---
 
-## ⚙️ Cara Menjalankan (Local via Docker)
+## ⚙️ Cara Menjalankan (Lokal via Docker)
 
-1. **Install Docker & Docker Compose** di perangkat Anda.
-2. Clone atau download repo ini:
+1. Pastikan Docker & Docker Compose sudah terinstal.
+2. Clone repository ini:
    ```bash
-   git clone https://github.com/username/joki-uas-ubl.git
-   cd joki-uas-ubl
+   git clone https://github.com/username/uas-cloud-2212501122.git
+   cd uas-cloud-2212501122
    ```
-3. Jalankan perintah:
+3. Jalankan aplikasi:
    ```bash
    docker-compose up --build
    ```
-
 4. Buka browser dan akses:
    ```
    http://localhost:8080
@@ -50,12 +50,12 @@ joki-uas-ubl/
 
 ---
 
-## 🧾 Fitur
+## 🧩 Fitur Aplikasi
 
-- Form input data Mahasiswa (NIM, Nama, Email)
-- Validasi sederhana via HTML
-- Tabel daftar mahasiswa (langsung dari database)
-- Desain responsif Bootstrap 5
+- Form input data mahasiswa (NIM, Nama, Email)
+- Validasi sederhana menggunakan HTML
+- Tabel daftar mahasiswa dari database
+- Desain responsif dengan Bootstrap 5
 
 ---
 
@@ -77,15 +77,17 @@ CREATE TABLE IF NOT EXISTS mahasiswa (
 
 ## 👨‍💻 Developer
 
-- **Nama:** Jokopling
+- **Nama:** Akbar Kusuma
+- **NIM:** 2212501122
+- **Mata Kuliah:** Komputasi Awan (Cloud Computing)
 
 ---
 
 ## 📌 Catatan
 
-- Tidak ada fitur edit dan hapus data.
-- Gunakan form dengan NIM maksimal 10 karakter.
-- Jika ingin reset data, bisa gunakan:
+- Fitur edit dan hapus belum tersedia.
+- Maksimal panjang NIM adalah 10 karakter.
+- Untuk mereset database:
    ```bash
    docker-compose down -v
    docker-compose up --build
